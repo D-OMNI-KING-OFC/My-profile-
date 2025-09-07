@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akachukwu Augustine Ogbo | Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Base hidden state */
+    .fade-section {
+      opacity: 0;
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    /* Different animation types */
+    .fade-bottom { transform: translateY(30px); }
+    .fade-left { transform: translateX(-50px); }
+    .fade-right { transform: translateX(50px); }
+    .zoom-in { transform: scale(0.8); }
+
+    /* Visible state */
+    .visible {
+      opacity: 1;
+      transform: translate(0,0) scale(1);
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900 font-sans">
+
+  <!-- Hero Section -->
+  <section class="fade-section fade-bottom h-screen flex flex-col justify-center items-center bg-gradient-to-r from-blue-500 to-purple-600 text-white text-center px-6">
+    <h1 class="text-5xl font-bold mb-4">Akachukwu Augustine Ogbo</h1>
+    <h2 class="text-2xl mb-6">Front-End Web Developer</h2>
+    <p class="text-lg max-w-xl mb-6">
+      Building responsive, user-friendly, and SEO-optimized websites with HTML, CSS, JavaScript, and Tailwind CSS.
+    </p>
+    <a href="cv/Akachukwu-Ogbo-CV.pdf" download 
+       class="bg-white text-blue-600 font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-gray-200 hover:scale-110 transition">
+       📄 Download CV
+    </a>
+  </section>
+
+  <!-- About Section -->
+  <section class="fade-section fade-left py-20 bg-white text-center">
+    <h2 class="text-4xl font-bold mb-6">About Me</h2>
+    <p class="max-w-2xl mx-auto text-lg">
+      I’m a passionate web developer specializing in front-end technologies. 
+      My goal is to craft seamless digital experiences using HTML, CSS, JavaScript, and modern frameworks like Tailwind CSS.
+    </p>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="fade-section fade-right py-20 bg-gray-200 text-center">
+    <h2 class="text-4xl font-bold mb-6">Projects</h2>
+    <div class="grid md:grid-cols-3 gap-6 px-6">
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h3 class="text-2xl font-semibold mb-4">Portfolio Website</h3>
+        <p>A responsive personal portfolio showcasing skills and projects.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h3 class="text-2xl font-semibold mb-4">Business Landing Page</h3>
+        <p>Modern landing page optimized for conversions and SEO.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h3 class="text-2xl font-semibold mb-4">E-commerce UI</h3>
+        <p>Interactive shopping experience built with HTML, CSS, and JS.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="fade-section zoom-in bg-gray-900 text-white py-20 text-center">
+    <h2 class="text-3xl font-bold mb-6">Contact Me</h2>
+    <p>Email: <a href="mailto:aka.ogbo@gmail.com" class="underline hover:text-blue-400 transition">aka.ogbo@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/D-OMNI-KING-OFC/" class="underline hover:text-blue-400 transition">github.com/D-OMNI-KING-OFC/</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/akachukwu-ogbo-000a71310" class="underline hover:text-blue-400 transition">linkedin.com/in/D_OMNI_KING_OFC</a></p>
+    
+    <div class="mt-6">
+      <a href="cv/Akachukwu-Ogbo-CV.pdf" download 
+         class="bg-blue-600 hover:bg-purple-600 text-white px-6 py-3 rounded-full shadow-lg transition">
+         📄 Download My CV
+      </a>
+    </div>
+  </section>
+
+  <!-- Scroll Reveal Script -->
+  <script>
+    const sections = document.querySelectorAll('.fade-section');
+
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(section => {
+        const boxTop = section.getBoundingClientRect().top;
+        if (boxTop < triggerBottom) {
+          section.classList.add('visible');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); // Run once on load
+  </script>
+
+</body>
+</html>
